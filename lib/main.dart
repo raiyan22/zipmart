@@ -15,11 +15,28 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVar.backgroundColor,
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          iconTheme: IconThemeData(
+            color: Colors.black, 
+          )
+        ),
         primarySwatch: Colors.blue,
       ),
+
       home: Scaffold(
         appBar: AppBar(
-          title: const Center(child: const Text("Zipmart")),
+          title: const Center(
+            child: Text("Zipmart")
+            ),
+        ),
+        body: Column(
+          children: [
+            Center(
+              child: 
+              ElevatedButton(onPressed: () {}, child: const Text("Click")))
+
+          ],
         ),
       ),
     );
