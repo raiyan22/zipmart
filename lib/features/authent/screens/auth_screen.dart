@@ -13,6 +13,15 @@ class _AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     
-    return const Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            const Text("Welcome"),
+          ],
+        ),
+      ),
+    );
   }
 }
