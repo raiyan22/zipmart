@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:zip_mart/constants/global_var.dart';
+import 'package:zip_mart/router.dart';
+
+import 'features/authent/screens/auth_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         scaffoldBackgroundColor: GlobalVar.backgroundColor,
-        colorScheme: ColorScheme.light(
+        colorScheme: const ColorScheme.light(
           primary: GlobalVar.secondaryColor,
         ),
         appBarTheme: const AppBarTheme(
@@ -26,22 +29,8 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child: Text("Zipmart")
-            ),
-        ),
-        body: Column(
-          children: [
-            Center(
-              child: 
-              ElevatedButton(onPressed: () {}, child: const Text("Click")))
-
-          ],
-        ),
-      ),
+      onGenerateRoute: ((settings) => generateRoute(settings)),
+      home: const AuthScreen(),
     );
   }
 }
